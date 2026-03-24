@@ -1,0 +1,29 @@
+POST http://localhost:7000/xusers/register
+Content-Type: application/json
+
+{
+
+    "name":"kalavathi",
+    "email":"kalavathi@mail.com",
+    "password":"123!@#123"
+
+}
+
+###
+
+
+POST http://localhost:7000/xusers/login
+Content-Type: application/json
+
+{
+    "name":"kalavathi",
+    "password":"123!@#123"
+}
+
+
+###
+
+
+GET http://localhost:7000/profile
+
+###
