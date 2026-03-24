@@ -13,12 +13,14 @@ let database
 const databaseConnection = async () => {
   try {
     database = await mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'krishna@12311',
-    database:'world'
+    host: process.env.DB_HOST,     
+    user: process.env.DB_USER,      
+    password: process.env.DB_PASS,  
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT || 3306
   })
-    app.listen(7000, () => {
+    const PORT = process.env.PORT || 7000;
+    app.listen(PORT, () => {
     console.log('server is running at port 7000')
   })
   } catch (error) {
