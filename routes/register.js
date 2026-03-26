@@ -4,7 +4,7 @@ import DB from '../database/databaseconnection.js'
 
 const router = express.Router()
 
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
     const { username, email, password } = req.body
     const database = await DB()
     const isUserExists = 'SELECT * FROM users WHERE email = ?'
