@@ -10,13 +10,13 @@ app.use(express.json());
 app.use(cors());
 
 
-// app.post('/register', registerRoute)
+app.post('/register', registerRoute)
 
 
-// app.post('/login', loginRoute)
+app.post('/login', loginRoute)
 
 
-// app.get('/profile', profileRoute)
+app.get('/profile', profileRoute)
 
 app.use((req, res, next) => {
   console.log("Incoming request:", req.method, req.url);
@@ -26,7 +26,6 @@ app.use((req, res, next) => {
 
 
 app.get('/', (req, res) => {
-  console.log("Root route hit")
   res.send("Backend is working")
 })
 
