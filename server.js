@@ -12,15 +12,15 @@ app.use(cors())
 
 
 ///User Register API
-app.post('/register', registerRoute)
+// app.post('/register', registerRoute)
 
 
 ///User Login API
-app.post('/login', loginRoute)
+// app.post('/login', loginRoute)
 
 
 ///Get User Profile API
-app.get('/profile', profileRoute)
+// app.get('/profile', profileRoute)
 
 
 const PORT = process.env.PORT || 7000
