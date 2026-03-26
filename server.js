@@ -19,13 +19,13 @@ app.use(cors());
 // app.get('/profile', profileRoute)
 
 
-const PORT = process.env.PORT || 7000
-
 app.get('/', (req, res) => {
   console.log("Root route hit")
   res.send("Backend is working")
 })
 
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 7000
+
+app.listen(PORT, "0.0.0.0", () => {
   console.log('server is running on port', PORT)
 })
