@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.post('/', async (req, res) => {
     const { username, email, password } = req.body
-    const database = await DB()
+    const database = DB()
     const isUserExists = 'SELECT * FROM users WHERE email = ?'
     const [allUsers] = await database.query(isUserExists, [email])
     const errors = {email_error : '', password_error : ''}

@@ -8,7 +8,7 @@ const router = express.Router()
 
 router.post('/', async (req, res) => {
     const {name, password} = req.body
-    const DB = await database()
+    const DB = database()
     try {
         const query = 'SELECT * FROM users WHERE username = ? OR email = ?'
         const [user] = await DB.query(query, [name, name])

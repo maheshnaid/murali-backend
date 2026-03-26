@@ -12,6 +12,7 @@ const connectToDatabse = async () => {
         port:process.env.MYSQLPORT
     })
     return database
+    
     }catch(error){
         console.log(`Database Error ${error}`)
     }
