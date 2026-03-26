@@ -1,7 +1,4 @@
 import express, { json } from 'express'
-import mysql from 'mysql2/promise'
-import bcrypt from 'bcrypt'
-import jwt from 'jsonwebtoken'
 import cors from 'cors'
 import loginRoute from './routes/login.js'
 import profileRoute from './routes/profile.js'
