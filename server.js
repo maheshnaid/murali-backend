@@ -26,6 +26,7 @@ app.get('/profile', profileRoute)
 const PORT = process.env.PORT || 7000
 
 app.get('/', (req, res) => {
+  console.log("Root route hit")
   res.send("Backend is working")
 })
 
