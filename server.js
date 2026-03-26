@@ -10,19 +10,9 @@ app.use(express.json());
 app.use(cors());
 
 
-app.post('/register', registerRoute)
-
-
-app.post('/login', loginRoute)
-
-
-app.get('/profile', profileRoute)
-
-app.use((req, res, next) => {
-  console.log("Incoming request:", req.method, req.url);
-  next();
-});
-
+app.use('/register', registerRoute)
+app.use('/login', loginRoute)
+app.use('/profile', profileRoute)
 
 
 app.get('/', (req, res) => {
