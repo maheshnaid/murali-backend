@@ -3,7 +3,7 @@ import mysql from 'mysql2/promise'
 
 let pool;
 
-const connectToDatabse = async () => {
+const connectToDatabse = () => {
     if(pool) return pool
 
     try{

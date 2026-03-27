@@ -3,15 +3,15 @@ import bcrypt from 'bcrypt'
 import DB from '../database/databaseconnection.js'
 
 const router = express.Router()
+const database = DB()
 
 router.post('/', async (req, res) => {
     const { username, email, password } = req.body
-    const database = DB()
 
     if(!database){
         return res.status(500).json({ message: 'Database connection failed' });
     }
-    
+
     const isUserExists = 'SELECT * FROM users WHERE email = ?'
     const [allUsers] = await database.query(isUserExists, [email])
     const errors = {email_error : '', password_error : ''}
