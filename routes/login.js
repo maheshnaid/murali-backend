@@ -7,11 +7,11 @@ import jwt from 'jsonwebtoken'
 const router = express.Router()
 
 router.post('/', async (req, res) => {
-    const {name, password} = req.body
+    const {username, password} = req.body
     const DB = database()
     try {
         const query = 'SELECT * FROM users WHERE username = ? OR email = ?'
-        const [user] = await DB.query(query, [name, name])
+        const [user] = await DB.query(query, [username, username])
 
         if(user.length === 0){
             return res.status(401).json({error: 'Invalid credantials'})
